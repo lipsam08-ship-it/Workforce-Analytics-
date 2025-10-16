@@ -182,8 +182,8 @@ def create_navigation():
     """Create the top navigation tabs"""
     st.markdown('<div class="nav-container">', unsafe_allow_html=True)
     
-    # Simplified navigation with only essential tabs
-    nav_options = ["About Tool", "Dashboard"]
+    # Navigation with "Begin" tab instead of "Dashboard"
+    nav_options = ["About Tool", "Begin"]
     selected_nav = st.radio(
         "Navigation",
         options=nav_options,
@@ -327,11 +327,11 @@ def display_about_tool():
     # Get Started Section
     st.markdown("---")
     st.markdown('<div class="upload-section">', unsafe_allow_html=True)
-    st.subheader("🚀 Get Started")
+    st.subheader("🚀 Ready to Begin?")
     
     st.info("""
-    **To begin analyzing your content performance:**
-    1. Navigate to the **Dashboard** tab using the navigation above
+    **To start analyzing your content performance:**
+    1. Navigate to the **Begin** tab using the navigation above
     2. Upload your content performance data (CSV, Excel, or JSON format)
     3. Or use sample data to explore the dashboard features
     4. Apply filters to analyze specific segments
@@ -340,8 +340,8 @@ def display_about_tool():
     
     st.markdown('</div>', unsafe_allow_html=True)
 
-def display_dashboard():
-    """Display the main dashboard with data analysis"""
+def display_begin_tab():
+    """Display the Begin tab with data analysis"""
     
     # File Upload Section
     st.markdown('<div class="upload-section">', unsafe_allow_html=True)
@@ -382,7 +382,7 @@ def display_dashboard():
             
             # Analysis Dashboard
             st.markdown("---")
-            st.header("📊 Content Performance Dashboard")
+            st.header("📊 Content Performance Analysis")
             
             # Sidebar filters
             st.sidebar.title("🔍 Filter Controls")
@@ -608,8 +608,8 @@ def main():
     # Display content based on navigation selection
     if selected_nav == "About Tool":
         display_about_tool()
-    else:  # Dashboard
-        display_dashboard()
+    else:  # Begin tab
+        display_begin_tab()
 
 if __name__ == "__main__":
     main()
